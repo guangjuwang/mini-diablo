@@ -40,7 +40,7 @@ final class CombatAndDungeonTests: XCTestCase {
         XCTAssertEqual(fragileHero.mana, 28)
     }
 
-    func testDungeonHasReachableBossArenaWhenGateOpens() {
+    func testDungeonHasReachableBossArenaWhenGateOpens() throws {
         let map = DungeonMap.blackHollowChapterOne()
         let spawn = try XCTUnwrap(map.points(for: .spawn).first)
         let bossArena = try XCTUnwrap(map.points(for: .bossArena).first)
