@@ -41,7 +41,7 @@ Result:
 
 ## Environment Gate
 
-Remote GitHub Actions `iOS CI` runs the full Xcode gate on `main` pushes. It selects Xcode, prints `xcodebuild -version`, runs `make validate-local`, then runs `make validate-ios`.
+Remote GitHub Actions `iOS CI` runs the full Xcode gate on `main` pushes. It selects Xcode, prints `xcodebuild -version`, runs `make validate-local`, then runs `make validate-ios`, including simulator install and launch smoke.
 
 `make validate-ios` result on this machine:
 
@@ -72,7 +72,7 @@ Undefined symbols for architecture arm64:
 
 A fresh SwiftPM library generated under `/tmp/swiftpm-control.7Xx5NI` returned the same `PackageDescription.Package.__allocating_init(...)` link error, so this is tracked as a local CommandLineTools environment signal.
 
-The repo includes `MiniDiablo.xcodeproj`, a shared `MiniDiablo` scheme, XCTest files, and `.github/workflows/ios-ci.yml` for full Xcode validation. XCTest coverage includes story hook integrity, beat-to-flag coverage, defeat signaling, potion recovery, dungeon reachability, and generated asset manifest checks. The CI workflow selects Xcode explicitly, prints `xcodebuild -version`, sets up Python 3.12, then runs local validation and iOS validation. A full Xcode installation can run the Swift test suite and native iOS build.
+The repo includes `MiniDiablo.xcodeproj`, a shared `MiniDiablo` scheme, XCTest files, and `.github/workflows/ios-ci.yml` for full Xcode validation. XCTest coverage includes story hook integrity, beat-to-flag coverage, defeat signaling, potion recovery, dungeon reachability, and generated asset manifest checks. The CI workflow selects Xcode explicitly, prints `xcodebuild -version`, sets up Python 3.12, then runs local validation, iOS validation, and simulator launch smoke. A full Xcode installation can run the Swift test suite and native iOS build.
 
 Full Xcode command:
 

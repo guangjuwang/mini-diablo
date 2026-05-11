@@ -44,7 +44,7 @@ Latest observed local result:
 
 ## Final Gate
 
-`make validate-ios` runs the full Xcode gate. It reports the active developer directory, checks the iOS Simulator SDK, runs `swift test`, and builds the `MiniDiablo` scheme for a generic iOS Simulator destination. `.github/workflows/ios-ci.yml` selects Xcode explicitly, prints `xcodebuild -version`, sets up Python 3.12, then runs `make validate-local` and `make validate-ios` on a macOS runner.
+`make validate-ios` runs the full Xcode gate. It reports the active developer directory, checks the iOS Simulator SDK, runs `swift test`, builds the `MiniDiablo` scheme for a generic iOS Simulator destination, installs the app on an available iPhone simulator, and launches it. `.github/workflows/ios-ci.yml` selects Xcode explicitly, prints `xcodebuild -version`, sets up Python 3.12, then runs `make validate-local` and `make validate-ios` on a macOS runner.
 
 Current local environment status: active developer directory is CommandLineTools. `swift test` and a fresh SwiftPM control package both return a `PackageDescription` manifest link error in this environment. Remote GitHub Actions `iOS CI` runs the full Xcode gate on macOS with Xcode and iOS Simulator SDK for every `main` push.
 
@@ -55,5 +55,5 @@ Status: active pending simulator/device playtest.
 Close criteria:
 
 - `make validate-local` passes in the local environment.
-- `make validate-ios` passes in GitHub Actions `iOS CI` or on a full Xcode installation with iOS Simulator SDK.
+- `make validate-ios` passes in GitHub Actions `iOS CI` or on a full Xcode installation with iOS Simulator SDK, including simulator install and launch smoke.
 - Chapter One, Survival, and Offline playtest paths run on an iOS Simulator or connected iOS device.

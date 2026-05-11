@@ -271,6 +271,8 @@ def validate_xcode_project() -> CheckResult:
     require("swift test" in build_script, "full Xcode build script runs SwiftPM tests")
     require("-scheme MiniDiablo" in build_script, "full Xcode build script uses shared scheme")
     require("generic/platform=iOS Simulator" in build_script, "full Xcode build script targets iOS Simulator")
+    require("simctl install" in build_script, "full Xcode build script installs the app on a simulator")
+    require("simctl launch" in build_script, "full Xcode build script launches the app on a simulator")
     return CheckResult("xcode-project", f"{len(expected_paths)} project references")
 
 
