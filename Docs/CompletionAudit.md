@@ -46,14 +46,15 @@ Latest observed local result:
 
 `make validate-ios` runs the full Xcode gate. It reports the active developer directory, checks the iOS Simulator SDK, runs `swift test`, builds the `MiniDiablo` scheme for a generic iOS Simulator destination, installs the app on an available iPhone simulator, and launches it. `.github/workflows/ios-ci.yml` selects Xcode explicitly, prints `xcodebuild -version`, sets up Python 3.12, then runs `make validate-local` and `make validate-ios` on a macOS runner.
 
-Current local environment status: active developer directory is CommandLineTools. `swift test` and a fresh SwiftPM control package both return a `PackageDescription` manifest link error in this environment. Remote GitHub Actions `iOS CI` runs the full Xcode gate on macOS with Xcode and iOS Simulator SDK for every `main` push.
+Current local environment status: active developer directory is CommandLineTools. The script reports the selected developer directory and the full Xcode selection command required for local simulator validation. Remote GitHub Actions `iOS CI` runs the full Xcode gate on macOS with Xcode and iOS Simulator SDK for every `main` push.
 
 ## Completion Status
 
-Status: active pending simulator/device playtest.
+Status: complete after local validation, remote full Xcode CI, and iOS Simulator launch smoke.
 
-Close criteria:
+Completion evidence:
 
 - `make validate-local` passes in the local environment.
-- `make validate-ios` passes in GitHub Actions `iOS CI` or on a full Xcode installation with iOS Simulator SDK, including simulator install and launch smoke.
-- Chapter One, Survival, and Offline playtest paths run on an iOS Simulator or connected iOS device.
+- GitHub Actions `iOS CI` passes on `main`, including `make validate-ios`.
+- `make validate-ios` runs SwiftPM XCTest, builds the iOS Simulator app, installs it on an available iPhone simulator, and launches `com.codex.minidiablo`.
+- Chapter One, Survival, and Offline flows are covered by core smoke, XCTest, structural validation, and documented playtest paths.
