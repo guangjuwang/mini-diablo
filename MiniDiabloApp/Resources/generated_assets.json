@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "id": "dark-relic-spritesheet",
+      "fileName": "dark_relic_spritesheet.png",
+      "source": "/Users/guangjuwang/.codex/generated_images/019e14e4-5248-7dc3-a654-f3838659a828/ig_0d8f2b3196e21963016a0141d78c808191be8d99806d191595.png",
+      "generator": "image_gen built-in tool",
+      "promptSummary": "Dark fantasy 4x4 top-down pixel art spritesheet with hero, skeleton, warlock, archivist, dungeon tiles, gate, shrine, loot icons, effects, and boss arena.",
+      "usedFor": [
+        "player sprite",
+        "enemy sprites",
+        "npc sprite",
+        "dungeon tiles",
+        "loot icons",
+        "combat effects",
+        "app icon source"
+      ],
+      "expectedPixelWidth": 1024,
+      "expectedPixelHeight": 1024,
+      "sha256": "0106f7045585be0a0233cf1455ee553334825e94cf90c877a8e94d91b6921f53"
+    },
+    {
+      "id": "dark-relic-ui-atlas",
+      "fileName": "dark_relic_ui_atlas.png",
+      "source": "/Users/guangjuwang/.codex/generated_images/019e14e4-5248-7dc3-a654-f3838659a828/ig_0d8f2b3196e21963016a01475a039c8191854eef20fb9f2d24.png",
+      "generator": "image_gen built-in tool",
+      "promptSummary": "Dark fantasy 4x4 pixel art UI atlas with HUD frame, health and mana orbs, minimap frame, action buttons, codex panel, quest tracker, loot popup, portrait frame, menu frame, inventory slots, and joystick ring.",
+      "usedFor": [
+        "hud frame",
+        "health orb",
+        "mana orb",
+        "mobile action buttons",
+        "codex panel",
+        "quest tracker",
+        "inventory frame",
+        "mobile joystick frame"
+      ],
+      "expectedPixelWidth": 1024,
+      "expectedPixelHeight": 1024,
+      "sha256": "4bbd6918a7cf3b3291a55c32c850dc9a7e461488ab8901ec13b2da83c8aa3cc1"
+    },
+    {
+      "id": "dark-relic-app-icon",
+      "fileName": "icon-1024.png",
+      "source": "/Users/guangjuwang/.codex/generated_images/019e14e4-5248-7dc3-a654-f3838659a828/ig_0d8f2b3196e21963016a014fe1e0a88191bc1d013881e4d038.png",
+      "generator": "image_gen built-in tool",
+      "promptSummary": "Dark fantasy pixel-art iOS app icon with hooded wanderer, glowing sword, iron gate, ember-lit crypt stones, and teal rune accent.",
+      "usedFor": [
+        "iOS app icon",
+        "home screen icon",
+        "app store marketing icon"
+      ],
+      "expectedPixelWidth": 1024,
+      "expectedPixelHeight": 1024,
+      "sha256": "b284516a1b151fabce5ebe3b4836fd78e38af6374cc10850ab7a561d34f939c8"
+    }
+  ]
+}

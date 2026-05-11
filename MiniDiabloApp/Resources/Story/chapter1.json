@@ -1,0 +1,107 @@
+{
+  "id": "chapter-one-black-hollow",
+  "chapterNumber": 1,
+  "title": "Ashes Beneath Black Hollow",
+  "status": "complete",
+  "summary": "The Ashbound Wanderer wakes under the ruined belfry of Black Hollow, follows the archivist's lantern into the crypt, restores three violet relic shards, opens the iron gate, and defeats the Ash Warlock. The victory closes the first chapter while leaving the wider world unresolved.",
+  "completionCriteria": [
+    "bellAwakened",
+    "archivistMet",
+    "shardsRecovered",
+    "ironGateOpened",
+    "ashWarlockDefeated",
+    "firstChapterComplete"
+  ],
+  "quests": [
+    {
+      "id": "q01-belfry",
+      "title": "Wake at the Ruined Belfry",
+      "objective": "Cross the first crypt chamber and survive the skeleton patrol.",
+      "completionFlag": "bellAwakened",
+      "reward": "Crimson Tonic"
+    },
+    {
+      "id": "q02-archivist",
+      "title": "Follow the Archivist's Lantern",
+      "objective": "Speak with the archivist beside the cracked wall and learn why the gate burns.",
+      "completionFlag": "archivistMet",
+      "reward": "Codex entry: The Hollow Oath"
+    },
+    {
+      "id": "q03-relic-shards",
+      "title": "Gather the Violet Shards",
+      "objective": "Recover the three relic shards scattered through Black Hollow.",
+      "completionFlag": "shardsRecovered",
+      "reward": "Relic Pulse skill"
+    },
+    {
+      "id": "q04-iron-gate",
+      "title": "Open the Iron Gate",
+      "objective": "Use the restored relic to break the gate seal.",
+      "completionFlag": "ironGateOpened",
+      "reward": "Access to the obsidian arena"
+    },
+    {
+      "id": "q05-warlock",
+      "title": "Defeat the Ash Warlock",
+      "objective": "Enter the ember-veined arena and banish the warlock.",
+      "completionFlag": "ashWarlockDefeated",
+      "reward": "Ember Ring and chapter completion"
+    }
+  ],
+  "storyBeats": [
+    {
+      "id": "beat-belfry",
+      "triggerFlag": "bellAwakened",
+      "speaker": "Narrator",
+      "line": "The bell above Black Hollow tolls once, though its iron tongue is gone."
+    },
+    {
+      "id": "beat-archivist",
+      "triggerFlag": "archivistMet",
+      "speaker": "Archivist Mael",
+      "line": "Every sealed gate keeps a wound alive. Bring me the violet shards, and the crypt will remember its shape."
+    },
+    {
+      "id": "beat-shards",
+      "triggerFlag": "shardsRecovered",
+      "speaker": "Relic",
+      "line": "The three shards hum as one and cast a path through the old ward."
+    },
+    {
+      "id": "beat-gate",
+      "triggerFlag": "ironGateOpened",
+      "speaker": "Archivist Mael",
+      "line": "The gate yields. Beyond it, the ash that speaks has borrowed a human voice."
+    },
+    {
+      "id": "beat-warlock",
+      "triggerFlag": "ashWarlockDefeated",
+      "speaker": "Ash Warlock",
+      "line": "The Hollow is a door, wanderer. You have only opened it from the wrong side."
+    },
+    {
+      "id": "beat-complete",
+      "triggerFlag": "firstChapterComplete",
+      "speaker": "Narrator",
+      "line": "Dawn reaches the belfry stones. Black Hollow falls silent, and three roads wait outside the graveyard."
+    }
+  ],
+  "openThreads": [
+    {
+      "id": "thread-northern-citadel",
+      "hook": "The Ash Warlock served a ruler beneath the Northern Citadel.",
+      "seededBy": "beat-warlock"
+    },
+    {
+      "id": "thread-hollow-oath",
+      "hook": "Archivist Mael recognizes the Wanderer's scar and avoids naming the Hollow Oath.",
+      "seededBy": "beat-archivist"
+    },
+    {
+      "id": "thread-three-roads",
+      "hook": "The completed chapter unlocks three possible next paths: citadel, marsh, or ruined coast.",
+      "seededBy": "beat-complete"
+    }
+  ]
+}
