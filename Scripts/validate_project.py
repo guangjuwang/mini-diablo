@@ -158,7 +158,8 @@ def validate_docs() -> CheckResult:
     workflow = ROOT / ".github/workflows/ios-ci.yml"
     require(workflow.exists(), "iOS CI workflow exists")
     workflow_text = workflow.read_text(encoding="utf-8")
-    require("actions/setup-python@v5" in workflow_text, "iOS CI workflow sets up Python")
+    require("actions/checkout@v6" in workflow_text, "iOS CI workflow uses current checkout action")
+    require("actions/setup-python@v6" in workflow_text, "iOS CI workflow sets up Python")
     require("python-version: '3.12'" in workflow_text, "iOS CI workflow uses Python 3.12")
     require("xcodebuild -version" in workflow_text, "iOS CI workflow prints the selected Xcode version")
     require("|| true" not in workflow_text, "iOS CI workflow exposes Xcode selection errors")
